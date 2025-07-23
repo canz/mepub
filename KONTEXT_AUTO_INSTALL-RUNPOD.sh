@@ -7,7 +7,7 @@ set -euo pipefail
 # ──────────────── CONSTANTS AND HELPERS ─────────────────────────
 MODEL_VERSION="Q8_0"
 HF_BASE="https://huggingface.co/Aitrepreneur/FLX/resolve/main"
-PYTHON="/workspace/ComfyUI/venv/bin/python3"
+PYTHON="/venv/main/bin/python3"
 
 FP8_MODEL="flux1-kontext-dev-fp8-e4m3fn.safetensors"
 NUNCHAKU_MODELS=(
@@ -59,7 +59,7 @@ find custom_nodes -maxdepth 2 -name requirements.txt | grep -v "ComfyUI-nunchaku
 done
 "$PYTHON" -m pip install -q pydantic~=2.0 matplotlib opencv-python-headless piexif gguf
 
-"$PYTHON" -m pip install "https://github.com/mit-han-lab/nunchaku/releases/download/v0.3.1/nunchaku-0.3.1+torch2.5-cp311-cp311-linux_x86_64.whl" 
+"$PYTHON" -m pip install "https://github.com/mit-han-lab/nunchaku/releases/download/v0.3.1/nunchaku-0.3.1+torch2.7-cp312-cp312-linux_x86_64.whl" 
 "$PYTHON" -m pip install insightface 
 "$PYTHON" -m pip install facexlib 
 "$PYTHON" -m pip install onnxruntime-gpu
